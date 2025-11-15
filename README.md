@@ -2,6 +2,8 @@
 
 This project implements a Multiple Regression model using PyTorch to predict the age (number of Rings) of Abalone sea snails based on various physical measurements. The workflow follows the standard PyTorch deep learning pipeline.
 
+![](abalone.png)
+
 ## ⚙️ Prerequisites
 To run this notebook, you need the following Python packages. You can install them using pip:
 
