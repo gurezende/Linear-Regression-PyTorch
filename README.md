@@ -37,14 +37,11 @@ The model is a simple Fully Connected Neural Network (FCNN) implemented using to
 
 The architecture consists of:
 
-An input layer with the number of features in the preprocessed dataset.
+* An input layer with the number of features in the preprocessed dataset.
+* Three hidden layers with ReLU activation functions and widths of 64, 32, and 16 nodes, respectively.
+* A final output layer with a single node (for regression) and no activation function.
 
-Three hidden layers with ReLU activation functions and widths of 64, 32, and 16 nodes, respectively.
-
-A final output layer with a single node (for regression) and no activation function.
-
-Python
-
+```Python
 class RegressionModel(nn.Module):
     def __init__(self, input_features):
         super(RegressionModel, self).__init__()
@@ -59,27 +56,26 @@ class RegressionModel(nn.Module):
         x = torch.relu(self.layer_3(x))
         x = self.output_layer(x)
         return x
-Training Parameters
-Loss Function: Mean Squared Error (MSE) (nn.MSELoss()), a standard loss for regression problems.
+```
 
-Optimizer: Adam (optim.Adam) with a learning rate of 0.001.
+### Training Parameters
 
-Epochs: The model is trained for 100 epochs.
+* Loss Function: Mean Squared Error (MSE) (nn.MSELoss()), a standard loss for regression problems.
+* Optimizer: Adam (optim.Adam) with a learning rate of 0.001.
+* Epochs: The model is trained for 100 epochs.
 
-📊 Results
+## 📊 Results
 The model's performance is evaluated using the Root Mean Squared Error (RMSE). The notebook demonstrates the calculation and application of an exponential transformation to the final predictions for a potential improvement.
 
+```
 Metric	Value
 Final RMSE	2.105
 Improvement	~4.1% (Calculated as (2.196 - 2.105) / 2.196)
+```
 
-Exportar para as Planilhas
+## ▶️ How to Run
 
-▶️ How to Run
-Clone this repository.
-
-Ensure all prerequisites are installed.
-
-Open the Pytorch_Multiple_Regression.ipynb file in a Jupyter Notebook environment (like JupyterLab or Google Colab).
-
-Run all cells sequentially to load the data, train the model, and view the final results.
+1. Clone this repository.
+2. Ensure all prerequisites are installed.
+3. Open the Pytorch_Multiple_Regression.ipynb file in a Jupyter Notebook environment (like JupyterLab or Google Colab).
+4. Run all cells sequentially to load the data, train the model, and view the final results.
